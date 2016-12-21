@@ -1,4 +1,4 @@
- Prefix Verb   URI Pattern                     Controller#Action
+  Prefix Verb   URI Pattern                     Controller#Action
         new_admin_session GET    /admins/sign_in(.:format)       admins/sessions#new
             admin_session POST   /admins/sign_in(.:format)       admins/sessions#create
     destroy_admin_session DELETE /admins/sign_out(.:format)      admins/sessions#destroy
@@ -46,3 +46,11 @@ cancel_admin_registration GET    /admins/cancel(.:format)        admins/registra
                           PATCH  /jobs/:id(.:format)             jobs#update
                           PUT    /jobs/:id(.:format)             jobs#update
                           DELETE /jobs/:id(.:format)             jobs#destroy
+                 boatjobs GET    /boatjobs(.:format)             boatjobs#index
+                          POST   /boatjobs(.:format)             boatjobs#create
+              new_boatjob GET    /boatjobs/new(.:format)         boatjobs#new
+             edit_boatjob GET    /boatjobs/:id/edit(.:format)    boatjobs#edit
+                  boatjob GET    /boatjobs/:id(.:format)         boatjobs#show
+                          PATCH  /boatjobs/:id(.:format)         boatjobs#update
+                          PUT    /boatjobs/:id(.:format)         boatjobs#update
+                          DELETE /boatjobs/:id(.:format)         boatjobs#destroy
