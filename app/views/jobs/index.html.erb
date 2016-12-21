@@ -1,2 +1,35 @@
 <h1>Jobs#index</h1>
 <p>Find me in app/views/jobs/index.html.erb</p>
+<div>
+	<% @jobs.each do |job| %> <!-- displays all jobs -->
+		<h2><!--displays job -->
+			Job Description: <%= job.description %> <br>
+			Origin: <%= job.origin %> <br>
+			Destination: <%= job.destination %> <br>
+			Amount of Containers: <%= job.container_amount %> <br>
+			Cost: <%= job.cost %>
+		</h2> 
+		<%= hidden_field_tag "job_id", job.id, id: "job_id" + job.id.to_s %>
+		<!-- add boats button -->
+		<%= button_tag "Add Boat", class: "add_boats_btn" %>
+	<% end %>
+</div>
+<!-- boats modal  -->
+<div class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Choose Your Boat</h4>
+      </div>
+      <div class="modal-body">
+      	<%= form_tag boatjobs_path do %>
+	        <% @boats.each do |boat| %>
+				<%= render boat, boat: boat %>
+			<% end %>
+			<%= submit_tag "Add" %>
+		<% end %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,2 +1,20 @@
 <h1>Boats#new</h1>
 <p>Find me in app/views/boats/new.html.erb</p>
+
+<%= form_for @boat do |f| %>
+	<p>
+		<%= f.label :name, "Name" %>
+		<%= f.text_area :name %>
+	</p>
+	<p>
+		<%= f.label :location, "Location" %>
+		<%= f.text_area :location %>
+	</p>
+	<p>
+		<%= f.label :container_amount, "Container Amount" %>
+		<%= f.text_area :container_amount %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
