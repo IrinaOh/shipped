@@ -1,0 +1,8 @@
+<%= form_tag '/addingjobs', method: :post, remote: true, id: "jobform" do %>
+    <% Job.all.each do |job| %>
+    	<%= job.description %> 
+		<%= check_box_tag("job[job" + job.id.to_s+ "]", job.id) %> <br>
+	<% end %>
+	<%= hidden_field_tag "boat_id",  "", id: "boat_id" %>
+	<%= submit_tag "Add", id: 'addingjobs' %>
+<% end %>

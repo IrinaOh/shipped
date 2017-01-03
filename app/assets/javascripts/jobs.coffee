@@ -3,5 +3,17 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'turbolinks:load', ->
-	$('.add_boats_btn').on 'click', -> 
+	$('.jobbutton').on 'click', (e) -> 
+		$('#job_id').val($(this).prev('input').val())
+		window.add_boats_btn = $(e.target).closest('.jobinfo')
 		$('.modal').modal()
+	$('#addingboats').on 'click', ->
+		$('#myModal').modal('hide')
+	
+
+	$('.boatbutton').on 'click', (e) -> 
+		$('#boat_id').val($(this).prev('input').val())
+		window.add_jobs_btn = $(e.target).closest('.boatinfo')
+		$('.modal').modal()
+	$('#addingjobs').on 'click', ->
+		$('#myJobsModal').modal('hide')

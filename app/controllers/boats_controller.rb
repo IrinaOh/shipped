@@ -10,17 +10,16 @@ class BoatsController < ApplicationController
 
   def edit
     @boat = Boat.find(params[:id])
-    respond_to do |format|
-      format.js #stay on the same page
-    end
+    # respond_to do |format|
+    #   format.js #stay on the same page
   end
 
   def show
-    @boat = Boat.find(params[:id])
+    
   end
 
   def create
-    @boat = Boat.new(user_id: current_user.id, name: params[:boat][:name], location: params[:boat][:location], container_amount: params[:boat][:container_amount])
+    @boat = current_user.boats.new(boat_params)
     if @boat.save
       redirect_to boats_path
     else
@@ -29,8 +28,16 @@ class BoatsController < ApplicationController
   end
 
   def update
+    @boat = Boat.find(params[:id]).update_attributes(boat_params)
+    redirect_to boats_path
   end
 
   def destroy
+  end
+
+  private
+  def boat_params
+    params.require(:boat).permit(:user_id, :name, :location, :container_amount)
+    
   end
 end
