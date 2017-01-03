@@ -1,0 +1,16 @@
+<div class="jobinfo">
+	<h4><!--displays job -->
+		Job Description: <%= job.description %> <br>
+		Origin: <%= job.origin %> <br>
+		Destination: <%= job.destination %> <br>
+		Amount of Containers: <%= job.container_amount %> <br>
+		Cost: <%= job.cost %>
+	</h4> 
+	<h5>Boats: <% job.boats.each do |boat| %>
+			<br><%= boat.name %><br>
+		<% end %>
+	</h5>
+	<%= hidden_field_tag "job_id", job.id, id: "job_id" + job.id.to_s , class: "jobid" %>
+	<!-- add boats button -->
+	<%= button_tag "Add Boat", class: "jobbutton"%>
+</div>
