@@ -5,14 +5,15 @@
 	<p>
 		<%= f.label :description, "Description" %>
 		<%= f.text_area :description %>
+		<i>Minimum 50 character description</i>
 	</p>
 	<p>
 		<%= f.label :origin, "Origin" %>
-		<%= f.text_area :origin %>
+		<%= f.select :origin, ['China', 'Finland', 'Spain', 'US'] %>
 	</p>
 	<p>
 		<%= f.label :destination, "Destination" %>
-		<%= f.text_area :destination %>
+		<%= f.select :destination, ['China', 'Finland', 'Spain', 'US'] %>
 	</p>
 	<p>
 		<%= f.label :container_amount, "Container Amount" %>

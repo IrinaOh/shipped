@@ -8,14 +8,14 @@
 	</p>
 	<p>
 		<%= f.label :location, "Location" %>
-		<%= f.text_area :location %>
+		<%= f.select :location, ['China', 'Finland', 'Spain', 'US'] %>
 	</p>
 	<p>
 		<%= f.label :container_amount, "Container Amount" %>
 		<%= f.text_area :container_amount %>
 	</p>
 	<p>
-		<%= f.label :avatar, "Boat Picture" %>
+		<%= f.label :avatar, "Boat Image" %>
 		<%= f.file_field :avatar %>
 	</p>
 	<p>
