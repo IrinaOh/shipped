@@ -7,7 +7,6 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
-    @boat = Boat.find(params[:boat_id])
   end
 
   def edit
@@ -33,21 +32,6 @@ class JobsController < ApplicationController
   end
 
   def destroy
-  end
-
-  def boatJobs
-    puts "THESE ARE MY PARAMS: #{params.inspect}"
-    @job = Job.find(params[:job_id])
-    params[:boatjobs].each do |boat_id|
-      @boat = Boat.find(boat_id)
-      respond_to do |format|
-        if @job.boats << @boat
-          format.js #send back to boatjobs.js.erb page with js
-        else
-          format.json {render :json => {:error => "@job.errors.full_messages.to_sentence"}, :status => 422}
-        end
-      end
-    end
   end
 
   private

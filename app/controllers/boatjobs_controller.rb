@@ -20,9 +20,21 @@ class BoatjobsController < ApplicationController
     end
   end
 
-  def newJobToBoat
+  def newjobtotoat
     @jobtoboat = Jobtoboat.create(job_id: params[:job_id], boat_id: params[:boat_id])
     redirect_to boats_path @boat
+  end
+
+  def createjobtoboat
+    @boat = Boat.find(params[:boat_id])
+    jobs = params[:job]
+    jobs.each do |key, job_id| 
+       job = Job.find(job_id)
+       @boat.jobs << job
+    end
+    respond_to do |format|
+      format.js #stay on the same page
+    end
   end
 
   def show

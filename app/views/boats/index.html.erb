@@ -1,10 +1,6 @@
 <div>
 	<% @boats.each do |boat| %> <!-- displays all boats -->
-		<h4> 
-			Boat Name: <%= boat.name %> <br />
-			Location: <%= boat.location %> <br />
-			Amount of Containers: <%= boat.container_amount %> 
-		</h4>
+		<%= render boat, boat: boat %>
 	<% end %>
 
 	<!-- jobss modal  -->
