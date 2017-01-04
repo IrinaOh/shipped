@@ -20,12 +20,12 @@ class JobsController < ApplicationController
     user = current_user
     @boat = Boat.find(params[:boat_id])
     @job = @boat.jobs.new(job_params)
-    if @job.save
-      @boat.jobs <<  @job
-      redirect_to jobs_path @job
-    else
-      render 'new'
-    end
+    # if @job.save
+    #   @boat.jobs <<  @job
+    #   redirect_to jobs_path @job
+    # else
+    #   render 'new'
+    # end
   end
 
   def update

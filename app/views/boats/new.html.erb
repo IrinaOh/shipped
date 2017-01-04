@@ -1,7 +1,7 @@
 <h1>Boats#new</h1>
 <p>Find me in app/views/boats/new.html.erb</p>
 
-<%= form_for @boat do |f| %>
+<%= form_for @boat, :url => boats_path, html: { multipart: true } do |f| %>
 	<p>
 		<%= f.label :name, "Name" %>
 		<%= f.text_area :name %>
@@ -13,6 +13,10 @@
 	<p>
 		<%= f.label :container_amount, "Container Amount" %>
 		<%= f.text_area :container_amount %>
+	</p>
+	<p>
+		<%= f.label :avatar, "Boat Picture" %>
+		<%= f.file_field :avatar %>
 	</p>
 	<p>
 		<%= f.submit %>

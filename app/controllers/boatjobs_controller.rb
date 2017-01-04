@@ -20,7 +20,7 @@ class BoatjobsController < ApplicationController
     end
   end
 
-  def newjobtotoat
+  def newjobtoboat
     @jobtoboat = Jobtoboat.create(job_id: params[:job_id], boat_id: params[:boat_id])
     redirect_to boats_path @boat
   end
