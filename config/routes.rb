@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   resources :jobs
   resources :boatjobs
    post '/addingboats' => 'boatjobs#create'
-   post '/addingjobs' => 'boatjobs#newJobToBoat'
+   post '/addingjobs' => 'boatjobs#createjobtoboat'
 end

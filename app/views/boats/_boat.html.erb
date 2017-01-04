@@ -1,0 +1,14 @@
+<div class="boatinfo">
+	<h4> 
+		Boat Name: <%= boat.name %> <br />
+		Location: <%= boat.location %> <br />
+		Amount of Containers: <%= boat.container_amount %> 
+	</h4>
+	<h5>Jobs: <% boat.jobs.each do |job| %>
+			<br><%= job.description %><br>
+		<% end %>
+	</h5>
+	<%= hidden_field_tag "boat_id", boat.id, id: "boat_id" + boat.id.to_s , class: "boatid" %>
+	<!-- add boats button -->
+	<%= button_tag "Add Job", class: "boatbutton"%>
+</div>
