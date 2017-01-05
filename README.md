@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version - 2.3.3
 
-Things you may want to cover:
+* Devise
 
-* Ruby version
+* Run rails s in terminal when in your app directory to start the app. Go to localhost:3000 in your browser. You will be able to create an account, sign out, log in , log out, edit your account information, create a new job or a new boat, assign a boat to a job and vice versa. Links on top of the screen help to easily navigate the site.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

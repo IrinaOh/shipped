@@ -1,3 +1,4 @@
+<!-- Displays all boats -->
 <div class="boatinfo">
 	<h4> 
 		<%= image_tag boat.avatar.url(:thumb) %><br>
@@ -5,11 +6,12 @@
 		Location: <%= boat.location %> <br />
 		Amount of Containers: <%= boat.container_amount %> <br>
 	</h4>
+	<!-- displays jobs assigned to a boat -->
 	<h5>Jobs: <br> <% boat.jobs.each do |job| %>
 			<br><%= job.description %><br>
 		<% end %>
 	</h5>
 	<%= hidden_field_tag "boat_id", boat.id, id: "boat_id" + boat.id.to_s , class: "boatid" %>
-	<!-- add boats button -->
+	<!-- add jobs button -->
 	<%= button_tag "Add Job", class: "boatbutton"%>
 </div>
