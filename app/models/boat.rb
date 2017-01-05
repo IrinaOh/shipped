@@ -4,6 +4,7 @@ class Boat < ApplicationRecord
   has_many :boatjobs
 
   validates :name, :uniqueness => { :message => "This name has been used, please, try again"}
+  validates_inclusion_of :location, :in => ['China', 'Finland', 'Spain', 'US']
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "150x150>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 end

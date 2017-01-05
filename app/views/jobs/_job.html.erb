@@ -6,6 +6,7 @@
 		Amount of Containers: <%= job.container_amount %> <br>
 		Cost: <%= job.cost %>
 	</h4> 
+	<!-- displays boats that assigned to a job -->
 	<h5>Boats: <% job.boats.each do |boat| %>
 			<br><%= boat.name %><br>
 		<% end %>

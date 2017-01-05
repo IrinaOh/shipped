@@ -4,7 +4,7 @@ class BoatjobsController < ApplicationController
   end
 
   def new
-    @boatandjob = Boatandjob.create(boat_id: params[:boat_id], job_id: params[:job_id])
+    @boatandjob = Boatandjob.create(boat_id: params[:boat_id], job_id: params[:job_id]) # new boat assigns to a job
     redirect_to jobs_path @job
   end
 
@@ -13,7 +13,7 @@ class BoatjobsController < ApplicationController
     boats = params[:boat]
     boats.each do |key, boat_id| 
        boat = Boat.find(boat_id)
-       @job.boats << boat
+       @job.boats << boat # creates job-boat relashionship
     end
     respond_to do |format|
       format.js #stay on the same page
@@ -21,7 +21,7 @@ class BoatjobsController < ApplicationController
   end
 
   def newjobtoboat
-    @jobtoboat = Jobtoboat.create(job_id: params[:job_id], boat_id: params[:boat_id])
+    @jobtoboat = Jobtoboat.create(job_id: params[:job_id], boat_id: params[:boat_id])# new job assigns to a boat
     redirect_to boats_path @boat
   end
 
@@ -30,7 +30,7 @@ class BoatjobsController < ApplicationController
     jobs = params[:job]
     jobs.each do |key, job_id| 
        job = Job.find(job_id)
-       @boat.jobs << job
+       @boat.jobs << job #creates boat-job relashionship
     end
     respond_to do |format|
       format.js #stay on the same page

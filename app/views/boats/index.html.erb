@@ -1,9 +1,10 @@
+<!-- displays all boats -->
 <div>
 	<% @boats.each do |boat| %> <!-- displays all boats -->
 		<%= render boat, boat: boat %>
 	<% end %>
 
-	<!-- jobss modal  -->
+	<!-- adding jobs modal  -->
 	<div class="modal fade" id="myJobsModal" tabindex="-1" role="dialog">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">

@@ -1,3 +1,4 @@
+<!-- checkbox for adding boats to jobs -->
 <%= form_tag '/addingboats', method: :post, remote: true, id: "boatform" do %>
     <% Boat.all.each do |boat| %>
     	<%= boat.name %> 

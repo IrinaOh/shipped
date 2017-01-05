@@ -1,3 +1,4 @@
+<!-- checkbox with jobs to add -->
 <%= form_tag '/addingjobs', method: :post, remote: true, id: "jobform" do %>
     <% Job.all.each do |job| %>
     	<%= job.description %> 
