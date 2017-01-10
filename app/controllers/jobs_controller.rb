@@ -18,10 +18,8 @@ class JobsController < ApplicationController
 
   def create
     user = current_user
-    @boat = Boat.find(params[:boat_id])
-    @job = @boat.jobs.new(job_params)
+    @job = Job.new(job_params)
     if @job.save
-      @boat.jobs <<  @job
       redirect_to jobs_path @job
     else
       render 'new'
@@ -36,6 +34,6 @@ class JobsController < ApplicationController
 
   private
   def job_params
-    params.require(:job).permit(:description, :destination, :cost, :container_amount)
+    params.require(:job).permit(:description, :destination, :origin, :cost, :container_amount)
   end
 end
