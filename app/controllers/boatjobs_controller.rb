@@ -30,7 +30,7 @@ class BoatjobsController < ApplicationController
     jobs = params[:job]
     jobs.each do |key, job_id| 
        job = Job.find(job_id)
-       @boat.jobs << job #creates boat-job relashionship
+       @boat.jobs << job #creates boat-job relationship
     end
     respond_to do |format|
       format.js #stay on the same page
